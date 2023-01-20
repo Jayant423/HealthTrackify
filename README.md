@@ -18,6 +18,8 @@ Our websites is broadly divided into 2 sections- Physical and Mental Health.
 
 
 
+
+
 In the physical  health section we have following services:
 
 
@@ -30,7 +32,10 @@ Broadly can be seen as:
 <img width="960" alt= "image" src="https://user-images.githubusercontent.com/88669720/213715883-560b5612-a9f1-4f75-a541-03cafe9b27dc.jpg">
 
 
+
+
 In the mental health section we have following services:
 
 Twilio Messaging API is used as medium of first communication. 
+
 <img width="960" alt= "image" src="https://user-images.githubusercontent.com/88669720/213717274-18e9609a-0ad1-49b1-9ff4-72be1d25d7d1.jpg">
