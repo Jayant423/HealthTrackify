@@ -3,20 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <title>Login/Sign up</title>
     <link rel="stylesheet" href="form.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
-    <div id="divform">
-    <form action="" method="post">
-       
-        <h1 style="text-shadow:2px 2px pink;">LOGIN</h1>
-        <p>E-mail address<br> <input type="text" name="email" required placeholder="Type your email" id="email" style="border-radius: 10px;"></p>
-        <p>Password<br> <input type="password" name="pass" id="pass" required placeholder="Type your password"style="border-radius: 10px;"></p>
-        <p><input type="submit" name="submit" id="submit"></p>
-    </form>
-</div>
-    <!--backend will store data-->
+
+    <!-- Section: Design Block -->
+    <section class="wrapper">
+        <!-- Jumbotron -->
+        <div class="px-4 py-5 px-md-2 text-center text-lg-start">
+            <div class="container">
+                <div class="row gx-lg-5 align-items-center">
+                    <div class="col-lg-6 mb-5 mb-lg-0">
+                        <h1 class="fw-bold ls-tight">
+                            <span style="text-shadow: 2px 2px pink;" id="quote-text"></span><br/>
+                            <span class="text-primary"><span id="quote-author"></span></span>
+                        </h1>
+                    </div>
+                    <div class="col-lg-6 mb-5 mb-lg-0">
+                        <div class="card">
+                            <div style="background-color: rgb(126, 211, 236);" class="card-body py-5 px-md-5">
+                                <form action="" method="post">
+                                    <h1 style="text-shadow: 2px 2px pink;">LOGIN</h1>
+                                    <!-- Email input -->
+                                    <div class="form-outline mb-4">
+                                        <p>Email address<br> <input type="text" name="email" required placeholder="Type your email" id="email" class="form-control" style="border-radius: 10px;"></p>
+                                    </div>
+                                    <!-- Password input -->
+                                    <div class="form-outline mb-4">
+                                        <p>Password<br> <input type="password" name="pass" id="pass" required class="form-control" placeholder="Type your password" style="border-radius: 10px;"></p>
+                                    </div>
+                                    <!-- Submit button -->
+                                    <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+                                </form>
+                                <!-- Register buttons -->
+                                <div class="text-center" style="text-shadow: 2px 2px pink;">
+                                    <p>New here? Sign up:</p>
+                                    <button class="btn btn-dark btn-lg btn-block" id="submit" type="submit"><a href="signupform.php" style="text-decoration: none; color: white;"> Sign Up</a></button>
+                                    <button class="btn btn-dark btn-lg btn-block" id="submit" type="submit"><a href="index.html" style="text-decoration: none; color: white;"> Home</a></button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Jumbotron -->
+    </section>
+    <!-- Section: Design Block -->
+
+    <!-- JavaScript for displaying random quotes -->
+    <script>
+        const quotes = [
+            {
+                quote: "Health is the greatest gift, contentment the greatest wealth, faithfulness the best relationship.",
+                author: "Buddha"
+            },
+            {
+                quote: "To keep the body in good health is a duty... otherwise, we shall not be able to keep our mind strong and clear.",
+                author: "Buddha"
+            },
+            
+            {
+                quote: "Let food be thy medicine and medicine be thy food.",
+                author: "Hippocrates"
+            },
+            {
+                quote: "He who has health, has hope; and he who has hope, has everything.",
+                author: "Thomas Carlyle"
+            },
+            {
+                quote: "Take care of your body. It's the only place you have to live.",
+                author: "Jim Rohn"
+            },
+            
+            {
+                quote: "A healthy outside starts from the inside.",
+                author: "Robert Urich"
+            },
+            {
+                quote: "Health is not valued till sickness comes.",
+                author: "Thomas Fuller"
+            },
+            {
+                quote: "The best and most efficient pharmacy is within your own system.",
+                author: "Robert C. Peale"
+            },
+            {
+                quote: "An apple a day keeps the doctor away.",
+                author: "Benjamin Franklin"
+            },
+            {
+                quote: "The groundwork for all happiness is good health.",
+                author: "Leigh Hunt"
+            },
+            {
+                quote: "Your body hears everything your mind says. Stay positive.",
+                author: "Unknown"
+            },
+            {
+                quote: "The greatest wealth is health.",
+                author: "Virgil"
+            },
+            {
+                quote: "A good laugh and a long sleep are the best cures in the doctor's book.",
+                author: "Irish Proverb"
+            },
+            {
+                quote: "The art of medicine consists of amusing the patient while nature cures the disease.",
+                author: "Voltaire"
+            },
+            {
+                quote: "To insure good health: eat lightly, breathe deeply, live moderately, cultivate cheerfulness, and maintain an interest in life.",
+                author: "William Londen"
+            },
+            {
+                quote: "The best doctor gives the least medicines.",
+                author: "Benjamin Franklin"
+            },
+            {
+                quote: "The doctor of the future will no longer treat the human frame with drugs, but rather will cure and prevent disease with nutrition.",
+                author: "Thomas Edison"
+            },
+            {
+                quote: "Time and health are two precious assets that we don't recognize and appreciate until they have been depleted.",
+                author: "Denis Waitley"
+            }
+        ];
+
+        // Function to display a random quote
+        function displayRandomQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            const quote = quotes[randomIndex];
+
+            document.getElementById("quote-text").textContent = quote.quote;
+            document.getElementById("quote-author").textContent = `- ${quote.author}`;
+        }
+
+        // Display a random quote when the page loads
+        window.addEventListener("load", displayRandomQuote);
+    </script>
 </body>
 </html>
