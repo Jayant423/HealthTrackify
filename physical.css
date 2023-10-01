@@ -1,5 +1,4 @@
 body{
-    
   font-size: 18px;
 }
 nav{
@@ -97,3 +96,29 @@ hr{
   font-weight:bolder;
   text-shadow:2px 2px pink;
 }
+
+/*------doc css---*/
+.docli{
+  display: flex;
+  width:100%;
+  text-shadow:2px 2px pink;
+  text-align: center;
+}
+
+.flex-child-element {
+  flex: 1;
+  border: 2px solid darkblue;
+  margin: 10px;
+  width:50%;
+}
+
+.flex-child-element:first-child {
+  margin-right: 20px;
+}
+
+.docimg{
+width:99%;
+height:75%;
+border: 2px solid darkblue;
+}
+
